@@ -1,0 +1,17 @@
+# Python
+*.pyc
+__pycache__/
+
+# Environnement virtuel
+venv/
+
+# VS Code
+.vscode/
+
+# Fichiers temporaires
+*.log
+*.tmp
+
+# Système
+.DS_Store
+Thumbs.db
