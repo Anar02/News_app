@@ -1,0 +1,10 @@
+
+# Bibliothèque pour faire des requêtes HTTP
+
+requests
+
+#Bibliothèque pour faire du scraping 
+
+beautifulsoup4
+transformers
+torch
