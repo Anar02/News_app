@@ -7,4 +7,17 @@ requests
 
 beautifulsoup4
 transformers
+protobuf
+blobfile
+Tiktoken
 torch
+SentencePiece
+
+#Bibliothèque Api
+
+fastapi
+uvicorn
+
+#Bibliothèque standard 
+
+datetime

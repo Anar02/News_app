@@ -4,9 +4,8 @@ from transformers import pipeline, AutoTokenizer, logging
 from datetime import datetime, timedelta
 
 
-
-
 def obtenir_news(api_key, sujet, nombre, langue="fr"):
+    logging.set_verbosity_error()
     date_to = datetime.now().date()
     date_from = date_to - timedelta(days=3)
 
@@ -22,7 +21,6 @@ def obtenir_news(api_key, sujet, nombre, langue="fr"):
     response = requests.get(url, params=params)
     if response.status_code == 200:
         data = response.json()
-        print(f"data: {data}")
         articles = data.get("articles", [])
         for i, article in enumerate(articles, 1):
             if "live" not in article['url']:
@@ -38,6 +36,7 @@ def obtenir_news(api_key, sujet, nombre, langue="fr"):
                 print(f"   URL : {article['url']}\n")
     else:
         print(f"Erreur lors de la récupération des news : {response.status_code}")
+    return texte
 
 
 def recuperer_texte(url):
@@ -86,5 +85,3 @@ def extraire_resume(url):
     except Exception as e:
         return f"Erreur lors du scraping : {e}"
     
-def nettoyer_texte(texte, url):
-    return texte
